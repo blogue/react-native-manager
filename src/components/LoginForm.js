@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 import { Card, CardSection, Input, Button } from './common';
 import { emailChanged, passwordChanged } from '../actions';
 
@@ -11,6 +12,7 @@ class LoginForm extends Component {
   onPasswordChange(text) {
     this.props.passwordChanged(text);
   }
+
 
   render() {
     return (
@@ -35,7 +37,7 @@ class LoginForm extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>
+          <Button onPress={Actions.employeeList}>
             Login
           </Button>
         </CardSection>
